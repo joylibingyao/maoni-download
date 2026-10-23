@@ -60,6 +60,7 @@
     .badge.pending { background: #f4eee7; color: #8c7562; }
     .card p { min-height: 45px; margin: 18px 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
     .metadata { font-size: 12px; overflow-wrap: anywhere; }
+    .card .install-note { min-height: 0; margin-top: -7px; font-size: 12px; }
     .download-disabled { opacity: .6; cursor: default; }
     .mobile-grid { grid-template-columns: 1fr; }
     .card .pill { width: 100%; }
@@ -116,13 +117,15 @@
         <div class="grid">
           <article class="card" data-platform="mac-arm64">
             <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🖥️</span><div><h3>macOS</h3><small>Apple Silicon · M 系列芯片</small></div></div><span class="badge pending">安装包准备中</span></div>
-            <p>解压后把毛妮桌宠拖入「应用程序」。首次打开时，按系统提示操作。</p>
+            <p>解压后把 MaoniPet.app 拖入「应用程序」。</p>
+            <p class="install-note">当前使用 ad-hoc 签名，未经 Apple 公证。首次打开请参照 <a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener noreferrer">Apple 官方安装说明</a>。</p>
             <p class="metadata" aria-live="polite">正在确认下载信息…</p>
             <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
           </article>
           <article class="card" data-platform="windows-x64">
             <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🪟</span><div><h3>Windows</h3><small>64 位电脑 · x64 安装包</small></div></div><span class="badge pending">安装包准备中</span></div>
             <p>下载安装包后双击，按安装向导完成操作。</p>
+            <p class="install-note">当前版本尚未在 Windows 真机上完成安装验证。</p>
             <p class="metadata" aria-live="polite">正在确认下载信息…</p>
             <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
           </article>
