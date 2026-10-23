@@ -17,6 +17,13 @@
       "url": "https://github.com/joylibingyao/maoni-download/releases/download/mac-arm64-v0.1.4-build20261024003400/maoni-mac-arm64-v0.1.4-build20261024003400.zip",
       "publishedAt": "2026-10-23T16:33:19.924Z"
     },
-    "windows-x64": null
+    "windows-x64": {
+      "version": "0.1.4",
+      "build": "20261024003000",
+      "sha256": "26d39d1bc43040385fea1166a1448c44bf1e066d6fa4b728e7747a4fd028b7a1",
+      "size": 206963451,
+      "url": "https://github.com/joylibingyao/maoni-download/releases/download/windows-x64-v0.1.4-build20261024003000/maoni-windows-x64-v0.1.4-build20261024003000.exe",
+      "publishedAt": "2026-10-23T16:38:06.638Z"
+    }
   }
 }
