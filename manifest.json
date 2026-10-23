@@ -3,11 +3,11 @@
   "platforms": {
     "android": {
       "version": "0.1",
-      "build": "71",
-      "sha256": "dfd6df5d24a14363f22e37592a00ac1a9220c1d2b1c74902ee7e1361aa7d8f86",
-      "size": 215638301,
-      "url": "https://github.com/joylibingyao/maoni-download/releases/download/android-v0.1-build71/maoni-android-v0.1-build71.apk",
-      "publishedAt": "2026-10-23T16:30:21.752Z"
+      "build": "72",
+      "sha256": "fbc422b029791eb41b79dd7bd812fb01d2232a69065a39e898012b151be9000d",
+      "size": 218019379,
+      "url": "https://github.com/joylibingyao/maoni-download/releases/download/android-v0.1-build72/maoni-android-v0.1-build72.apk",
+      "publishedAt": "2026-10-23T17:34:37.079Z"
     },
     "mac-arm64": {
       "version": "0.1.4",
