@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fdf6ee">
+  <meta name="description" content="下载毛妮 App 和桌宠。">
+  <title>下载毛妮 · App 与桌宠</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fdf6ee;
+      --card: #fffefa;
+      --ink: #3d3229;
+      --muted: #817366;
+      --line: #eee3d6;
+      --orange: #df805d;
+      --orange-dark: #a94e32;
+      --green: #507b5c;
+      --shadow: 0 18px 60px rgb(80 53 31 / 8%);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background: radial-gradient(ellipse at 50% -14%, #fff 0, transparent 48%), var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(100% - 40px, 960px); margin-inline: auto; }
+    header { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-size: 17px; font-weight: 750; letter-spacing: .04em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 12px; background: #f6e5d8; font-size: 20px; }
+    .nav-link { text-decoration: none; color: var(--muted); font-size: 14px; }
+    .hero { padding: 66px 0 54px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--orange-dark); font-size: 13px; font-weight: 700; letter-spacing: .08em; }
+    .eyebrow::before, .eyebrow::after { content: ""; width: 18px; height: 1px; background: #ddb49e; }
+    h1 { margin: 16px 0 12px; font-size: clamp(34px, 6vw, 54px); line-height: 1.12; letter-spacing: -.045em; }
+    .hero p { max-width: 480px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .jump-links { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
+    .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 19px; border: 1px solid var(--line); border-radius: 999px; background: #fffefa; text-decoration: none; font-size: 14px; font-weight: 650; transition: transform .15s ease, box-shadow .15s ease; }
+    .pill:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgb(80 53 31 / 8%); }
+    .pill.primary { color: white; border-color: var(--orange); background: var(--orange); }
+    main { padding-bottom: 64px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin: 0 2px 15px; }
+    h2 { margin: 0; font-size: 21px; letter-spacing: -.02em; }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 13px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { min-height: 216px; padding: 23px; border: 1px solid rgb(238 227 214 / 85%); border-radius: 22px; background: rgb(255 254 250 / 94%); box-shadow: var(--shadow); }
+    .card-top { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+    .platform { display: flex; align-items: center; gap: 11px; }
+    .platform-icon { width: 44px; height: 44px; display: grid; place-items: center; flex: none; border-radius: 15px; background: #f8eee3; font-size: 23px; }
+    .platform h3 { margin: 0; font-size: 18px; }
+    .platform small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 9px; border-radius: 999px; background: #edf4eb; color: var(--green); font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .badge.pending { background: #f4eee7; color: #8c7562; }
+    .card p { min-height: 45px; margin: 18px 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .metadata { font-size: 12px; overflow-wrap: anywhere; }
+    .download-disabled { opacity: .6; cursor: default; }
+    .mobile-grid { grid-template-columns: 1fr; }
+    .card .pill { width: 100%; }
+    .note { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: #f4ebdf; color: #66574a; font-size: 13px; line-height: 1.7; }
+    .note span { font-size: 17px; }
+    footer { padding: 23px 0 30px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 12px; }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 28px, 460px); }
+      header { height: 64px; }
+      .hero { padding: 42px 0 38px; }
+      .hero p { font-size: 14px; }
+      .jump-links { gap: 8px; }
+      .pill { min-height: 42px; padding-inline: 15px; font-size: 13px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 5px; }
+      .grid { grid-template-columns: 1fr; gap: 12px; }
+      .card { min-height: 0; padding: 19px; }
+      .card p { min-height: 0; margin: 14px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top" aria-label="毛妮下载首页"><span class="brand-mark" aria-hidden="true">🐱</span><span>毛妮</span></a>
+      <a class="nav-link" href="#desktop">桌面陪伴</a>
+    </header>
+
+    <section class="hero" id="top" aria-labelledby="title">
+      <div class="eyebrow">陪你和猫咪一起生活</div>
+      <h1 id="title">把毛妮带在身边</h1>
+      <p>在手机上记录猫咪的状态，也可以让熟悉的小猫陪在电脑桌面。</p>
+      <nav class="jump-links" aria-label="快速前往">
+        <a class="pill primary" href="#mobile">下载 App</a>
+        <a class="pill" href="#desktop">了解桌宠</a>
+      </nav>
+    </section>
+
+    <main>
+      <section id="mobile" aria-labelledby="mobile-title">
+        <div class="section-heading"><h2 id="mobile-title">手机 App</h2><p>选择你的手机平台</p></div>
+        <div class="grid mobile-grid">
+          <article class="card" data-platform="android">
+            <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🤖</span><div><h3>Android</h3><small>安卓手机 · APK 安装包</small></div></div><span class="badge pending">安装包准备中</span></div>
+            <p>下载后按手机提示安装。已安装的用户也可以在 App 内获取更新。</p>
+            <p class="metadata" aria-live="polite">正在确认下载信息…</p>
+            <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="desktop" aria-labelledby="desktop-title" style="margin-top:38px">
+        <div class="section-heading"><h2 id="desktop-title">电脑桌宠</h2><p>一只跟随 App 形象的小猫</p></div>
+        <div class="grid">
+          <article class="card" data-platform="mac-arm64">
+            <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🖥️</span><div><h3>macOS</h3><small>Apple Silicon · M 系列芯片</small></div></div><span class="badge pending">安装包准备中</span></div>
+            <p>解压后把毛妮桌宠拖入「应用程序」。首次打开时，按系统提示操作。</p>
+            <p class="metadata" aria-live="polite">正在确认下载信息…</p>
+            <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
+          </article>
+          <article class="card" data-platform="windows-x64">
+            <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🪟</span><div><h3>Windows</h3><small>64 位电脑 · x64 安装包</small></div></div><span class="badge pending">安装包准备中</span></div>
+            <p>下载安装包后双击，按安装向导完成操作。</p>
+            <p class="metadata" aria-live="polite">正在确认下载信息…</p>
+            <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
+          </article>
+        </div>
+        <div class="note"><span aria-hidden="true">🐾</span><div>桌宠可以同步 App 里的小猫形象、配饰和衣柜，也能点小猫选择动作。连接时在桌宠设置中填入 App 的家庭令牌。</div></div>
+      </section>
+    </main>
+    <footer>毛妮 · 陪伴猫咪，也照顾猫咪</footer>
+  </div>
+  <script>
+    // Same-origin static data: no runtime GitHub API or authentication dependency.
+    const extensions = { android: '.apk', 'mac-arm64': '.zip', 'windows-x64': '.exe' };
+    fetch('./manifest.json', { cache: 'no-store' }).then(response => {
+      if (!response.ok) throw new Error('manifest unavailable');
+      return response.json();
+    }).then(manifest => {
+      if (manifest.schemaVersion !== 1 || !manifest.platforms) throw new Error('invalid manifest');
+      for (const card of document.querySelectorAll('[data-platform]')) {
+        const platform = card.dataset.platform;
+        const entry = manifest.platforms[platform];
+        const metadata = card.querySelector('.metadata');
+        if (!entry) { metadata.textContent = '安装包准备好后会在这里开放下载。'; continue; }
+        const version = String(entry.version);
+        const build = String(entry.build);
+        const tag = `${platform}-v${version}-build${build}`;
+        const expectedURL = `https://github.com/joylibingyao/maoni-download/releases/download/${tag}/maoni-${tag}${extensions[platform]}`;
+        if (!/^[0-9A-Za-z][0-9A-Za-z._-]{0,63}$/.test(version) || !/^\d+$/.test(build) || entry.url !== expectedURL || !/^[a-f0-9]{64}$/.test(entry.sha256) || !Number.isSafeInteger(entry.size) || entry.size <= 0 || !Number.isFinite(Date.parse(entry.publishedAt))) {
+          metadata.textContent = '下载信息暂不可用，请稍后重试。'; continue;
+        }
+        const badge = card.querySelector('.badge');
+        badge.classList.remove('pending'); badge.textContent = '可下载';
+        metadata.textContent = `v${version}（${build}） · ${(entry.size / 1024 / 1024).toFixed(1)} MB · ${new Date(entry.publishedAt).toLocaleDateString('zh-CN')}`;
+        const checksum = document.createElement('details');
+        const summary = document.createElement('summary'); summary.textContent = '校验 SHA-256';
+        checksum.append(summary, document.createTextNode(entry.sha256)); metadata.append(checksum);
+        const link = card.querySelector('a.pill');
+        link.href = entry.url; link.removeAttribute('aria-disabled'); link.className = 'pill primary';
+        link.textContent = platform === 'android' ? '下载 Android App' : '下载毛妮桌宠';
+      }
+    }).catch(() => {
+      for (const metadata of document.querySelectorAll('.metadata')) metadata.textContent = '下载信息暂不可用，请稍后重试。';
+    });
+  </script>
+</body>
+</html>
