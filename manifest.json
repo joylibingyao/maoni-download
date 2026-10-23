@@ -1,7 +1,14 @@
 {
   "schemaVersion": 1,
   "platforms": {
-    "android": null,
+    "android": {
+      "version": "0.1",
+      "build": "71",
+      "sha256": "dfd6df5d24a14363f22e37592a00ac1a9220c1d2b1c74902ee7e1361aa7d8f86",
+      "size": 215638301,
+      "url": "https://github.com/joylibingyao/maoni-download/releases/download/android-v0.1-build71/maoni-android-v0.1-build71.apk",
+      "publishedAt": "2026-10-23T16:30:21.752Z"
+    },
     "mac-arm64": null,
     "windows-x64": null
   }
