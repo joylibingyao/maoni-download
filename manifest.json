@@ -11,11 +11,11 @@
     },
     "mac-arm64": {
       "version": "0.1.4",
-      "build": "20261024003400",
-      "sha256": "cbe39dd0340daeb73a028435d0630fd7ec00c58b892528c7dce7746b9e7cda2e",
-      "size": 234739229,
-      "url": "https://github.com/joylibingyao/maoni-download/releases/download/mac-arm64-v0.1.4-build20261024003400/maoni-mac-arm64-v0.1.4-build20261024003400.zip",
-      "publishedAt": "2026-10-23T16:33:19.924Z"
+      "build": "20261026124034",
+      "sha256": "52ba5307c3475548eef93b097f8849ebe8db7fae872ec12352f961572cd3d2b3",
+      "size": 236160499,
+      "url": "https://github.com/joylibingyao/maoni-download/releases/download/mac-arm64-v0.1.4-build20261026124034/maoni-mac-arm64-v0.1.4-build20261026124034.zip",
+      "publishedAt": "2026-10-26T12:50:52.616Z"
     },
     "windows-x64": {
       "version": "0.1.4",
