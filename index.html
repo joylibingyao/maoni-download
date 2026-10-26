@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fdf6ee">
-  <meta name="description" content="下载毛妮 App 和桌宠。">
-  <title>下载毛妮 · App 与桌宠</title>
+  <meta name="description" content="用毛妮记录猫咪的饮水、饮食和身体变化，搭配项圈了解活动量，也让熟悉的小猫陪在电脑桌面。下载毛妮 App 与桌宠。">
+  <title>毛妮 · 记录健康，陪伴日常</title>
   <style>
     :root {
       color-scheme: light;
@@ -40,6 +40,7 @@
     .eyebrow::before, .eyebrow::after { content: ""; width: 18px; height: 1px; background: #ddb49e; }
     h1 { margin: 16px 0 12px; font-size: clamp(34px, 6vw, 54px); line-height: 1.12; letter-spacing: -.045em; }
     .hero p { max-width: 480px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    section[id] { scroll-margin-top: 24px; }
     .jump-links { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
     .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 19px; border: 1px solid var(--line); border-radius: 999px; background: #fffefa; text-decoration: none; font-size: 14px; font-weight: 650; transition: transform .15s ease, box-shadow .15s ease; }
     .pill:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgb(80 53 31 / 8%); }
@@ -66,6 +67,32 @@
     .card .pill { width: 100%; }
     .note { display: flex; gap: 12px; align-items: flex-start; margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: #f4ebdf; color: #66574a; font-size: 13px; line-height: 1.7; }
     .note span { font-size: 17px; }
+    .content-section { margin-bottom: 44px; }
+    .intro { max-width: 650px; margin: 0 2px 22px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .feature { padding: 22px; border: 1px solid var(--line); border-radius: 20px; background: rgb(255 254 250 / 70%); }
+    .feature-icon { display: block; margin-bottom: 13px; font-size: 25px; }
+    .feature h3 { margin: 0 0 9px; font-size: 16px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .device-grid { margin-top: 18px; }
+    .device-card { padding: 28px; border-radius: 22px; background: #edf1e8; text-align: center; }
+    .device-card h3 { margin: 10px 0; font-size: 19px; }
+    .device-card p { margin: 0 auto; color: #61715d; font-size: 14px; line-height: 1.85; }
+    .device-card .device-more { margin-top: 12px; font-size: 12px; }
+    .camera-card { background: #f6eee3; }
+    .camera-card p { color: var(--muted); }
+    .health-note { margin: 14px 2px 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .app-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 28px; justify-items: center; }
+    .app-shot { width: 100%; max-width: 300px; margin: 0; text-align: center; }
+    .app-shot a { display: block; border-radius: 24px; }
+    .app-shot img { display: block; width: 100%; height: auto; object-fit: contain; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); background: var(--card); }
+    .app-shot figcaption { margin-top: 15px; font-size: 15px; font-weight: 650; line-height: 1.7; }
+    .app-shot figcaption span { display: block; margin-top: 3px; color: var(--muted); font-size: 13px; font-weight: 400; }
+    .section-action { margin-top: 20px; }
+    .connection-help { margin-top: 18px; padding: 16px 18px; border-radius: 16px; background: #f4ebdf; font-size: 13px; line-height: 1.8; color: #66574a; }
+    .connection-help summary { cursor: pointer; font-weight: 650; }
+    .connection-help ol { margin: 12px 0 0; padding-left: 21px; }
+    a:focus-visible, summary:focus-visible { outline: 3px solid var(--orange-dark); outline-offset: 4px; }
     footer { padding: 23px 0 30px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 12px; }
     @media (max-width: 620px) {
       .wrap { width: min(100% - 28px, 460px); }
@@ -76,6 +103,14 @@
       .pill { min-height: 42px; padding-inline: 15px; font-size: 13px; }
       .section-heading { align-items: start; flex-direction: column; gap: 5px; }
       .grid { grid-template-columns: 1fr; gap: 12px; }
+      .features { grid-template-columns: 1fr; gap: 12px; }
+      .feature { padding: 19px; }
+      .feature-icon { float: left; margin: 0 13px 0 0; font-size: 23px; }
+      .feature p { clear: both; padding-top: 6px; }
+      .device-card { padding: 23px 20px; }
+      .intro { font-size: 14px; }
+      .content-section { margin-bottom: 36px; }
+      .app-gallery { grid-template-columns: 1fr; gap: 28px; }
       .card { min-height: 0; padding: 19px; }
       .card p { min-height: 0; margin: 14px 0; }
     }
@@ -85,23 +120,91 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="#top" aria-label="毛妮下载首页"><span class="brand-mark" aria-hidden="true">🐱</span><span>毛妮</span></a>
+      <a class="brand" href="#top" aria-label="毛妮首页"><span class="brand-mark" aria-hidden="true">🐱</span><span>毛妮</span></a>
       <a class="nav-link" href="#desktop">桌面陪伴</a>
     </header>
 
     <section class="hero" id="top" aria-labelledby="title">
-      <div class="eyebrow">陪你和猫咪一起生活</div>
-      <h1 id="title">把毛妮带在身边</h1>
-      <p>在手机上记录猫咪的状态，也可以让熟悉的小猫陪在电脑桌面。</p>
+      <div class="eyebrow">陪伴猫咪，也照顾猫咪</div>
+      <h1 id="title">把每天的关心<br>记成健康日常</h1>
+      <p>喝水、吃饭、上厕所，都是了解猫咪的线索。<br>用毛妮留住这些小事，也让熟悉的小猫陪在你身边。</p>
       <nav class="jump-links" aria-label="快速前往">
         <a class="pill primary" href="#mobile">下载 App</a>
-        <a class="pill" href="#desktop">了解桌宠</a>
+        <a class="pill" href="#desktop-downloads">下载桌宠</a>
       </nav>
     </section>
 
     <main>
-      <section id="mobile" aria-labelledby="mobile-title">
-        <div class="section-heading"><h2 id="mobile-title">手机 App</h2><p>选择你的手机平台</p></div>
+      <section class="content-section" id="health" aria-labelledby="health-title">
+        <div class="section-heading"><h2 id="health-title">关心健康，从平常的每一天开始</h2></div>
+        <p class="intro">每只猫都有自己的生活习惯。把平时吃了多少、喝了多少、身体有什么变化记下来，才能在需要时回头看看：它最近和平常有什么不一样。毛妮把这些日常放在一起，帮你更了解自家的猫。</p>
+        <div class="features">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">💧</span>
+            <h3>记下吃喝与如厕</h3>
+            <p>记录饮水、饮食和排便排尿，把零散的日常变成可以回看的记录，少一点「好像和平时不一样」的拿不准。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🌿</span>
+            <h3>留意身体的小变化</h3>
+            <p>记录体重、呼吸和其他健康情况，也把驱虫、呕吐等需要记住的事留好，照顾猫咪时有迹可循。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">📋</span>
+            <h3>看诊时，说得更清楚</h3>
+            <p>回看一段时间的变化，把日常记录整理成兽医报告，让就诊时的描述多一些依据，少一些遗漏。</p>
+          </article>
+        </div>
+        <div class="grid device-grid">
+          <article class="device-card" aria-labelledby="collar-title">
+            <span aria-hidden="true">🐾</span>
+            <h3 id="collar-title">用项圈，了解它每天的活动量</h3>
+            <p>毛妮项圈上的小传感器记录猫咪的活动量。接入 App 后，可以查看每小时的活动变化，了解它什么时候爱动、最近是不是比平时安静。</p>
+            <p class="device-more">没有项圈也能使用 App 记录日常。想要项圈，可以在 App「猫窝 → 项圈」登记。</p>
+          </article>
+          <article class="device-card camera-card" aria-labelledby="camera-title">
+            <span aria-hidden="true">📷</span>
+            <h3 id="camera-title">用摄像头，记录小猫的一天</h3>
+            <p>支持安装「毛妮摄像头」的旧手机或 iPad，也能成为家里的猫咪摄像头。连接 App 后，把镜头前看到的吃饭、喝水、睡觉等日常，记进小猫日记。</p>
+            <p class="device-more">在 App「猫窝 → 摄像头」选择「添加摄像头」，扫码配对。</p>
+          </article>
+        </div>
+        <p class="health-note">健康记录用于日常观察和就诊参考，不代替兽医诊断。</p>
+      </section>
+
+      <section class="content-section" id="app-preview" aria-labelledby="app-preview-title">
+        <div class="section-heading"><h2 id="app-preview-title">看看 App 里的日常</h2></div>
+        <div class="app-gallery">
+          <figure class="app-shot">
+            <a href="./app-health.png" target="_blank" rel="noopener noreferrer" aria-label="查看健康概览大图">
+              <img src="./app-health.png" width="1206" height="2622" loading="lazy" decoding="async" alt="毛妮 App 健康页，展示安心指数、饮水、饮食、排便、排尿和活动量柱状图">
+            </a>
+            <figcaption>健康概览<span>吃喝、便尿与活动量，一起留意</span></figcaption>
+          </figure>
+          <figure class="app-shot">
+            <a href="./app-diary.png" target="_blank" rel="noopener noreferrer" aria-label="查看小猫日志大图">
+              <img src="./app-diary.png" width="1206" height="2622" loading="lazy" decoding="async" alt="毛妮 App 小猫日志，按时间记录猫咪昨天的睡觉、走动、玩耍和如厕日常">
+            </a>
+            <figcaption>小猫日志<span>把它一天的小事，慢慢记下来</span></figcaption>
+          </figure>
+          <figure class="app-shot">
+            <a href="./app-home.png" target="_blank" rel="noopener noreferrer" aria-label="查看猫咪首页大图">
+              <img src="./app-home.png" width="1206" height="2622" loading="lazy" decoding="async" alt="毛妮 App 猫咪首页，展示小猫形象、最近状态与记录入口">
+            </a>
+            <figcaption>猫咪首页<span>看看它最近在做什么</span></figcaption>
+          </figure>
+          <figure class="app-shot">
+            <a href="./app-games.png" target="_blank" rel="noopener noreferrer" aria-label="查看猫咪小游戏大图">
+              <img src="./app-games.png" width="1206" height="2622" loading="lazy" decoding="async" alt="毛妮 App 猫咪小游戏入口，展示四款游戏的封面和开始按钮">
+            </a>
+            <figcaption>猫咪小游戏<span>和小猫一起玩一会儿</span></figcaption>
+          </figure>
+        </div>
+        <p class="health-note">截图为示例记录，供了解功能。</p>
+      </section>
+
+      <section class="content-section" id="mobile" aria-labelledby="mobile-title">
+        <div class="section-heading"><h2 id="mobile-title">下载毛妮 App</h2><p>从今天开始，记下它的日常</p></div>
         <div class="grid mobile-grid">
           <article class="card" data-platform="android">
             <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🤖</span><div><h3>Android</h3><small>安卓手机 · APK 安装包</small></div></div><span class="badge pending">安装包准备中</span></div>
@@ -112,25 +215,55 @@
         </div>
       </section>
 
-      <section id="desktop" aria-labelledby="desktop-title" style="margin-top:38px">
-        <div class="section-heading"><h2 id="desktop-title">电脑桌宠</h2><p>一只跟随 App 形象的小猫</p></div>
+      <section class="content-section" id="desktop" aria-labelledby="desktop-title">
+        <div class="section-heading"><h2 id="desktop-title">让熟悉的小猫，陪你上班</h2><p>毛妮电脑桌宠</p></div>
+        <p class="intro">工作时，桌面角落也能有一只小猫。它会睡觉、洗脸、伸懒腰，偶尔溜达几步。连接毛妮 App 后，还能换上你为它选好的形象和配饰。</p>
+        <div class="features">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🐈</span>
+            <h3>陪着你，也听你的</h3>
+            <p>按住小猫就能拖到喜欢的位置，单击或右键打开动作菜单。忙起来时可以隐藏，想安静一点也有安静模式。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🎀</span>
+            <h3>手机和电脑，是同一只猫</h3>
+            <p>连接 App 后同步小猫形象、配饰和衣柜。也可以在桌宠的「换衣服」里挑选已有穿搭，同步回手机。</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">☕</span>
+            <h3>也提醒你照顾自己</h3>
+            <p>开启久坐提醒，小猫会按你设置的间隔提醒你起身活动。提醒间隔可以调整，也可以随时关闭。</p>
+          </article>
+        </div>
+        <div class="note"><span aria-hidden="true">🐾</span><div>家里接入猫咪观测数据后，还可以在动作菜单开启「跟随真猫」，让桌宠跟着已记录到的猫咪状态做动作。</div></div>
+        <div class="section-action"><a class="pill primary" href="#desktop-downloads">下载电脑桌宠</a></div>
+        <details class="connection-help">
+          <summary>桌宠怎样连接我的 App？</summary>
+          <ol>
+            <li>在手机 App 的「猫窝 → 服务配置」复制家庭令牌，传到自己的电脑。</li>
+            <li>打开「桌宠设置 → 更多设置 → 连接 App」，粘贴家庭令牌。</li>
+            <li>连接成功后，桌宠会同步 App 中的小猫形象和配饰。家庭令牌只在自己的设备间使用，请勿公开分享。</li>
+          </ol>
+        </details>
+      </section>
+
+      <section id="desktop-downloads" aria-labelledby="desktop-downloads-title">
+        <div class="section-heading"><h2 id="desktop-downloads-title">下载电脑桌宠</h2><p>选择你的电脑平台</p></div>
         <div class="grid">
           <article class="card" data-platform="mac-arm64">
             <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🖥️</span><div><h3>macOS</h3><small>Apple Silicon · M 系列芯片</small></div></div><span class="badge pending">安装包准备中</span></div>
             <p>解压后把 MaoniPet.app 拖入「应用程序」。</p>
-            <p class="install-note">当前使用 ad-hoc 签名，未经 Apple 公证。首次打开请参照 <a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener noreferrer">Apple 官方安装说明</a>。</p>
+            <p class="install-note">首次打开可能遇到 macOS 安全提示。如无法打开，请参照 <a href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noopener noreferrer">Apple 官方说明</a>了解原因和处理方式。</p>
             <p class="metadata" aria-live="polite">正在确认下载信息…</p>
             <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
           </article>
           <article class="card" data-platform="windows-x64">
             <div class="card-top"><div class="platform"><span class="platform-icon" aria-hidden="true">🪟</span><div><h3>Windows</h3><small>64 位电脑 · x64 安装包</small></div></div><span class="badge pending">安装包准备中</span></div>
             <p>下载安装包后双击，按安装向导完成操作。</p>
-            <p class="install-note">当前版本尚未在 Windows 真机上完成安装验证。</p>
             <p class="metadata" aria-live="polite">正在确认下载信息…</p>
             <a class="pill download-disabled" aria-disabled="true">暂不可下载</a>
           </article>
         </div>
-        <div class="note"><span aria-hidden="true">🐾</span><div>桌宠可以同步 App 里的小猫形象、配饰和衣柜，也能点小猫选择动作。连接时在桌宠设置中填入 App 的家庭令牌。</div></div>
       </section>
     </main>
     <footer>毛妮 · 陪伴猫咪，也照顾猫咪</footer>
@@ -157,10 +290,7 @@
         }
         const badge = card.querySelector('.badge');
         badge.classList.remove('pending'); badge.textContent = '可下载';
-        metadata.textContent = `v${version}（${build}） · ${(entry.size / 1024 / 1024).toFixed(1)} MB · ${new Date(entry.publishedAt).toLocaleDateString('zh-CN')}`;
-        const checksum = document.createElement('details');
-        const summary = document.createElement('summary'); summary.textContent = '校验 SHA-256';
-        checksum.append(summary, document.createTextNode(entry.sha256)); metadata.append(checksum);
+        metadata.textContent = `v${version} · ${(entry.size / 1024 / 1024).toFixed(1)} MB · ${new Date(entry.publishedAt).toLocaleDateString('zh-CN')}`;
         const link = card.querySelector('a.pill');
         link.href = entry.url; link.removeAttribute('aria-disabled'); link.className = 'pill primary';
         link.textContent = platform === 'android' ? '下载 Android App' : '下载毛妮桌宠';
