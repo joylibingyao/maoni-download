@@ -19,11 +19,11 @@
     },
     "windows-x64": {
       "version": "0.1.4",
-      "build": "20261024003000",
-      "sha256": "26d39d1bc43040385fea1166a1448c44bf1e066d6fa4b728e7747a4fd028b7a1",
-      "size": 206963451,
-      "url": "https://github.com/joylibingyao/maoni-download/releases/download/windows-x64-v0.1.4-build20261024003000/maoni-windows-x64-v0.1.4-build20261024003000.exe",
-      "publishedAt": "2026-10-23T16:38:06.638Z"
+      "build": "20261026191120",
+      "sha256": "1d1a6d610eac3ab550269aaaed6734078a58515eccfd6d66898809ee0b0e5f82",
+      "size": 207196071,
+      "url": "https://github.com/joylibingyao/maoni-download/releases/download/windows-x64-v0.1.4-build20261026191120/maoni-windows-x64-v0.1.4-build20261026191120.exe",
+      "publishedAt": "2026-10-26T19:12:31.182Z"
     }
   }
 }
